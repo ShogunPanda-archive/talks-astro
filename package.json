@@ -1,0 +1,40 @@
+{
+  "name": "the-tale-of-avoiding-a-time-based-ddos-attack-in-nodejs",
+  "version": "1.0.0",
+  "description": "The tale of avoiding a time-based DDOS attack in Node.js",
+  "homepage": "TBD",
+  "repository": "TBD",
+  "bugs": {
+    "url": "https://github.com/TBD/issues"
+  },
+  "author": "Paolo Insogna <paolo.insogna@nearform.com>",
+  "license": "Apache-2.0",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "./scripts/dev.sh",
+    "build": "./scripts/build.sh",
+    "serve": "./scripts/serve.sh",
+    "format": "prettier -w talks theme",
+    "lint": "eslint talks thbuild"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.36.6",
+    "postcss": "^8.4.18",
+    "vite-svg-loader": "^3.6.0"
+  },
+  "devDependencies": {
+    "@cowtech/eslint-config": "^8.7.5",
+    "@fastify/static": "^6.5.0",
+    "fastify": "^4.9.2",
+    "prettier": "^2.7.1"
+  },
+  "engines": {
+    "node": " >=14.15.0"
+  }
+}
