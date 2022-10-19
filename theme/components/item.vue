@@ -1,5 +1,6 @@
 <script setup>
 const props = defineProps({
+  index: String,
   icon: String,
   title: String,
   description: String
@@ -10,14 +11,26 @@ const props = defineProps({
 .item {
   display: flex;
   align-items: center;
+  column-gap: 2ch;
 
   &__icon {
+    display: inline;
+    stroke-width: 1;
     width: 0.6gs;
     height: 0.6gs;
     min-width: 0.6gs;
     min-height: 0.6gs;
-    margin-right: 2ch;
-    stroke-width: 1;
+    margin-top: 3px;
+  }
+
+  &__index {
+    font-family: Poppins;
+    @apply font-bold;
+    @apply text-right;
+    width: 0.3gs;
+    font-size: 35pt;
+    line-height: 1em;
+    margin-top: 6px;
   }
 
   &__text {
@@ -34,6 +47,7 @@ const props = defineProps({
 
 <template>
   <section class="item">
+    <h5 v-if="index" class="item__index">{{ index }}</h5>
     <SvgIcon v-if="icon" :name="icon" class="item__icon" />
 
     <div class="item__text">

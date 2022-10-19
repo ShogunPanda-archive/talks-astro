@@ -9,7 +9,7 @@
     }
   }
 
-  &__bg-turtle {
+  &__turtle {
     background-size: 60% !important;
     background-position-y: center;
 
@@ -20,6 +20,13 @@
       height: 2.5gs;
       stroke-width: 0.5;
       @apply text-white;
+    }
+  }
+
+  &__node {
+    img {
+      margin: 0 auto;
+      max-width: 75%;
     }
   }
 }

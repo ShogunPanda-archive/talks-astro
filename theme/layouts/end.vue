@@ -24,7 +24,7 @@ import LogoWithText from '../assets/nearform-logo-with-text-right.svg'
 
     &__logo-with-text {
       width: 1.81gs;
-      margin-right: var(--nf-base-position-left);
+      margin-right: 0.3gs;
     }
   }
 

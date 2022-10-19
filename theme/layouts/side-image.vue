@@ -16,7 +16,6 @@ const props = defineProps({
   main {
     flex: 1;
     padding: var(--nf-base-position-left);
-    padding-right: 0;
 
     h4 {
       text-align: justify;
@@ -27,8 +26,7 @@ const props = defineProps({
     align-self: center;
     max-width: 4gs;
     max-height: calc(100% - (2 * var(--nf-base-position-left)));
-    margin: var(--nf-base-position-left);
-    margin-right: calc(var(--nf-base-position-left) + 0.45gs);
+    margin: var(--nf-base-position-left) calc(2 * var(--nf-base-position-left)) var(--nf-base-position-left) 0;
   }
 
   .item {
@@ -36,6 +34,7 @@ const props = defineProps({
       padding-top: var(--nf-item-spacing);
     }
 
+    &__index,
     &__icon {
       @apply text-nf-neon-blue;
     }

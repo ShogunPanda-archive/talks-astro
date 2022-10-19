@@ -31,6 +31,7 @@ const props = defineProps({
       padding-top: var(--nf-item-spacing);
     }
 
+    &__index,
     &__icon {
       @apply text-nf-neon-blue;
     }

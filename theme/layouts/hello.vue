@@ -34,7 +34,7 @@ const props = defineProps({ logo_black: Boolean })
         <h1>Hello, I'm {{ $slidev.configs.author.name.split(' ')[0] }}!</h1>
 
         <div class="flex flex-1 flex-col justify-center">
-          <img src="/theme/avatar-with-shadow.png" alt="Paolo" class="avatar my-0 mx-auto" />
+          <img src="/theme/avatar-with-shadow.png" class="avatar my-0 mx-auto" />
 
           <section class="mx-auto my-0">
             <Item icon="users">

@@ -16,7 +16,6 @@ const props = defineProps({
   main {
     flex: 1;
     padding: var(--nf-base-position-left);
-    padding-right: 0;
 
     h4 {
       text-align: justify;
@@ -39,6 +38,7 @@ const props = defineProps({
       padding-top: var(--nf-item-spacing);
     }
 
+    &__index,
     &__icon {
       @apply text-nf-neon-blue;
     }

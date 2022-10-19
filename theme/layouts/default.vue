@@ -14,13 +14,15 @@ const props = defineProps({
 <style>
 .full {
   padding: var(--nf-base-position-left);
+  padding-right: calc(2 * var(--nf-base-position-left));
 
   .item {
     &:not(:first-of-type) {
       padding-top: var(--nf-item-spacing);
     }
 
-    &__icon {
+    &__icon,
+    &__index {
       @apply text-nf-neon-blue;
     }
   }

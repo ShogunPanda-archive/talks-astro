@@ -19,6 +19,7 @@
   "scripts": {
     "dev": "./scripts/dev.sh",
     "build": "./scripts/build.sh",
+    "create": "./scripts/create.sh",
     "serve": "./scripts/serve.sh",
     "format": "prettier -w talks theme",
     "lint": "eslint talks thbuild"

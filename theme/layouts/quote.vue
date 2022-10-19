@@ -18,6 +18,7 @@ const props = defineProps({
 
 .quote {
   padding: var(--nf-base-position-left);
+  padding-right: calc(2 * var(--nf-base-position-left));
 
   h1 {
     &::after {

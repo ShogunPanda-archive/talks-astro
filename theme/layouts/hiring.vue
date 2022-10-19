@@ -155,16 +155,12 @@ import Youtube from '../assets/icons/brand-youtube.svg'
       <h1 class="hiring__highlight text-nf-brunch-pink">We are hiring!</h1>
 
       <footer class="hiring__footer flex self-end items-center w-full bg-nf-brunch-pink text-nf-darkest-blue">
-        <a href="https://nearform.com">nearform.com</a>
+        <a href="https://nearform.com" class="text-nf-darkest-blue">nearform.com</a>
         <hr class="w-0 border-0 border-left-2 border-nf-darkest-blue" />
         <span class="block">follow us on</span>
 
         <a href="https://www.linkedin.com/company/nearform/" class="hiring__footer__social">
           <LinkedIn class="text-nf-darkest-blue" />
-        </a>
-
-        <a href="https://www.facebook.com/NearFormLtd" class="hiring__footer__social">
-          <Facebook class="text-nf-darkest-blue" />
         </a>
 
         <a href="https://twitter.com/nearform" class="hiring__footer__social">
@@ -177,6 +173,10 @@ import Youtube from '../assets/icons/brand-youtube.svg'
 
         <a href="https://www.youtube.com/channel/UCp2Tsbjd3P8itnBHUNHi82A" class="hiring__footer__social">
           <Youtube class="text-nf-darkest-blue" />
+        </a>
+
+        <a href="https://www.facebook.com/NearFormLtd" class="hiring__footer__social">
+          <Facebook class="text-nf-darkest-blue" />
         </a>
 
         <div class="flex-1"></div>
