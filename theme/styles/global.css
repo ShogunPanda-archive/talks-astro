@@ -6,6 +6,11 @@ html {
   font-size: 12pt;
 }
 
+/* This is used in presenter mode */
+:root .prose {
+  font-size: 1.8rem !important;
+}
+
 h1,
 h2,
 h3 {
