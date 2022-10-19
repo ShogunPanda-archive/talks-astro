@@ -159,25 +159,20 @@ h4 {
   height: 100%;
 }
 
-.columns {
-  margin-top: 4ch;
+.columns-container {
   margin-right: 0.55gs;
+}
 
+.columns  {
   .item {
     flex: 1;
     flex-direction: column;
     height: 100%;
-    padding: 4ch;
-    border: 0 solid transparent;
-    @apply border-neutral-300;
+    padding: 2ch;
+    @apply bg-white;
 
     &:not(:first-of-type) {
-      padding-top: 4ch;
-      border-left-width: 1px;
-    }
-
-    &:not(:last-of-type) {
-      border-right-width: 1px;
+      padding-top: 2ch;
     }
 
     &__icon {
@@ -191,13 +186,8 @@ h4 {
     }
   }
 
-  &--narrow {
-    .item {
-      padding: 2ch;
-
-      &:not(:first-of-type) {
-        padding-top: 2ch;
-      }
-    }
+  &__border {
+    width: 1.5px;
+    height: 100%;
   }
 }

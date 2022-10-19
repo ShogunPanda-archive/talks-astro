@@ -9,12 +9,15 @@ classes: flex flex-col
   <em>Changing timeout handling has improved performance by 2%.</em>
 </h4>
 
-<div class="columns flex flex-1 items-center">
+<div class="flex flex-1 columns-container mt-0 items-center">
+  <div class="columns flex flex-1 items-center">
   <Item icon="history" title="Request are checked periodically">
     The HTTP server regularly checks for requests which have not completed in the allowed time.
     <br/><br/>
     See the new option: <br/><code>connectionsCheckingInterval</code>
   </Item>
+
+  <Line height="190" class="columns__border stroke-neutral-300"/>
 
   <Item icon="license" title="Have safer defaults">
     The timeouts for headers and request
@@ -22,6 +25,7 @@ classes: flex flex-col
     <br/><br/>
     <em>The default Node.js configuration now protects against SlowLoris.</em>
   </Item>
+  </div>
 </div>
 
 <!--

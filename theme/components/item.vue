@@ -1,7 +1,9 @@
-<script>
-export default {
-  props: ['icon', 'title', 'description']
-}
+<script setup>
+const props = defineProps({
+  icon: String,
+  title: String,
+  description: String
+})
 </script>
 
 <style>
