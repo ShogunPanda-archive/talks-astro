@@ -84,16 +84,16 @@ a:focus {
 .logo {
   position: absolute;
   z-index: 100;
-  bottom: 0.2gs;
-  right: 0.3gs;
+  bottom: var(--nf-base-position-left);
+  right: var(--nf-base-position-left);
   width: 0.35gs;
   padding-bottom: 0.05gs;
   border-bottom-width: 0.05gs;
   @apply border-nf-brunch-pink;
-}
 
-.bg-nf-brunch-pink:not(.half) + .logo.fill-white {
-  @apply border-white;
+  &.fill-white {
+    @apply border-white;
+  }
 }
 
 .sequence {
@@ -183,11 +183,11 @@ a:focus {
     flex: 1;
     flex-direction: column;
     height: 100%;
-    padding: 2ch;
+    padding: 1ch;
     @apply bg-white;
 
     &:not(:first-of-type) {
-      padding-top: 2ch;
+      padding-top: 1ch;
     }
 
     &__icon {

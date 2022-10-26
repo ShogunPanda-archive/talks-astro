@@ -1,0 +1,32 @@
+.the-tale-of-avoiding-a-time-based-ddos-attack-in-nodejs {
+  &__headers-timeout {
+    .sequence {
+      left: auto;
+      right: -0.4gs;
+      bottom: -15%;
+      font-size: 300pt;
+      @apply text-red-300;
+    }
+  }
+
+  &__turtle {
+    background-size: 60% !important;
+    background-position-y: center;
+
+    & + svg {
+      left: 1gs;
+      bottom: -0.4gs;
+      width: 2.5gs;
+      height: 2.5gs;
+      stroke-width: 0.5;
+      @apply text-white;
+    }
+  }
+
+  &__node {
+    img {
+      margin: 0 auto;
+      max-width: 75%;
+    }
+  }
+}

@@ -7,7 +7,7 @@ const props = defineProps({
   position: String,
   image: String,
   icon: String,
-  sequence: Number
+  sequence: String
 })
 </script>
 

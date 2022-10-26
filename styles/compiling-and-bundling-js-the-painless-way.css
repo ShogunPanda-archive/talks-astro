@@ -1,0 +1,262 @@
+.compiling-and-bundling-js-the-painless-way {
+  &__credits {
+    .side {
+      max-width: 3gs;
+    }
+  }
+
+  &__pain {
+    background-size: 5gs !important;
+
+    & > main {
+      padding-right: calc(var(--nf-base-position-left) / 2);
+    }
+  }
+
+  &__should-not {
+    background-size: 5gs !important;
+
+    & + .logo.fill-white {
+      @apply border-white;
+    }
+  }
+
+  &__terminology {
+    & + .sequence {
+      left: 4gs;
+    }
+  }
+
+  &__transpile-example {
+    img {
+      margin: 0 auto;
+      max-width: 75%;
+    }
+  }
+
+  &__transpile-where {
+    img {
+      height: 1gs;
+    }
+
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 4ch;
+      column-gap: 4ch;
+    }
+
+    .flex {
+      column-gap: 4ch;
+    }
+  }
+
+  &__transpilers {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 2ch;
+    }
+  }
+
+  &__transpile-llvm {
+    img {
+      margin: 0 auto;
+      max-height: 3gs;
+    }
+  }
+
+  &__transpile-what,
+  &__transpile-no-end {
+    .flex-container {
+      column-gap: 4ch;
+    }
+    .code {
+      height: 3gs;
+    }
+
+    .babel {
+      width: 2gs;
+    }
+
+    .arrow {
+      width: 1.5gs;
+      height: 0.5gs;
+    }
+  }
+
+  &__transpile-in-depth {
+    background-size: 50% !important;
+  }
+
+  &__transpile-bad-code {
+    .code {
+      width: 4gs;
+    }
+
+    .arrow {
+      width: 1.5gs;
+      height: 0.5gs;
+      margin: 1ch 0;
+    }
+  }
+
+  &__transpile-good-code {
+    .code {
+      width: 4gs;
+    }
+
+    .arrow {
+      width: 1.5gs;
+      height: 0.5gs;
+      margin: 0 1ch;
+    }
+  }
+
+  &__languages {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 2ch;
+      column-gap: 2ch;
+    }
+
+    & + .sequence {
+      left: 4gs;
+    }
+  }
+
+  &__parsing {
+    & + .sequence {
+      left: -0.3gs;
+      z-index: 0;
+    }
+
+    .columns img {
+      height: 1.6gs;
+    }
+  }
+
+  &__traversing,
+  &__transforming {
+    img {
+      margin: 2ch auto 0 auto;
+      height: 3gs;
+    }
+  }
+
+  &__jscodeshift {
+    .columns img {
+      height: 2gs;
+    }
+  }
+
+  &__jscodeshift-solution {
+    img {
+      margin: 2ch auto 0 auto;
+      height: 3.5gs;
+    }
+  }
+
+  &__webpack-worth {
+    background-size: 3.5gs !important;
+    background-position: 6gs 0.6gs;
+
+    h3 {
+      font-size: 25pt;
+      right: 0.4gs;
+      bottom: 0.9gs;
+    }
+  }
+
+  &__esbuild {
+    background-size: 3.5gs !important;
+    background-position: 6gs 1.1gs;
+  }
+
+  &__esbuild-fast,
+  &__esbuild-cli {
+    img {
+      width: calc(10gs - (var(--nf-base-position-left) * 2));
+      max-width: calc(10gs - (var(--nf-base-position-left) * 2));
+      margin-top: 2ch;
+    }
+  }
+
+  &__swc {
+    background-size: 3.5gs !important;
+    background-position: 6gs 2.1gs;
+  }
+
+  &__swc-fast {
+    .columns img {
+      height: 2gs;
+    }
+  }
+
+  &__swc-config {
+    img {
+      height: 3.5gs;
+      margin: 0 auto;
+    }
+  }
+
+  &__swc-wasm {
+    background-size: auto 100% !important;
+  }
+
+  &__vite {
+    background-size: 3.5gs !important;
+    background-position: 6gs 1.1gs;
+  }
+
+  &__vite-tools {
+    .tools-root {
+      width: 2gs;
+      height: 2gs;
+    }
+
+    .vite {
+      top: 0;
+      left: 0;
+      width: 2gs;
+      z-index: 2;
+    }
+
+    .esbuild,
+    .rollup {
+      width: 1gs;
+      z-index: 1;
+      top: 0.5gs;
+    }
+
+    .esbuild {
+      left: 0;
+    }
+
+    .rollup  {
+      right: 0;
+    }
+  }
+
+  &__snowpack {
+    background-size: 3.5gs !important;
+    background-position: 6gs 1gs;
+
+    h3 {
+      font-size: 25pt;
+      right: 0.75gs;
+      bottom: 1.1gs;
+    }
+  }
+
+  &__skypack {
+    img {
+      margin: 2ch auto 0 auto;
+      height: 3gs;
+    }
+  }
+
+  &__new-bundlers {
+    img {
+      height: 3.5gs;
+    }
+  }
+}

@@ -7,7 +7,7 @@ const props = defineProps({
   position: String,
   image: String,
   icon: String,
-  sequence: Number
+  sequence: String
 })
 </script>
 
@@ -26,7 +26,7 @@ const props = defineProps({
     align-self: center;
     max-width: 4gs;
     max-height: calc(100% - (2 * var(--nf-base-position-left)));
-    margin: var(--nf-base-position-left) calc(2 * var(--nf-base-position-left)) var(--nf-base-position-left) 0;
+    margin: var(--nf-base-position-left) calc(2 * var(--nf-base-position-left) + 0.1gs) var(--nf-base-position-left) 0;
   }
 
   .item {

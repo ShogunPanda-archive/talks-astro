@@ -1,0 +1,82 @@
+.dont-break-graphql-extend-it {
+  &__celebrate {
+    &__callout {
+      bottom: -1.5gs;
+      left: 2.5gs;
+      width: 5gs;
+    }
+  }
+
+  &__server {
+    background-size: 50% !important;
+  }
+
+  &__bad {
+    h1 {
+      font-size: 150pt;
+      line-height: 1em;
+    }
+  }
+
+  &__choice {
+    img {
+      top: -5.5gs;
+    }
+  }
+
+  &__jsonpath {
+    .item:first-of-type {
+      margin-top: 0.3gs;
+    }
+
+    img {
+      width: 3.5gs;
+    }
+  }
+
+  &__enriching  {
+    .item:not(:first-of-type) {
+      padding-top: 0.2gs;
+    }
+  }
+
+  &__ensure-type {
+    .item:first-of-type {
+      margin-top: 0.3gs;
+    }
+
+    img {
+      width: 2.3gs;
+    }
+  }
+
+  &__tree,
+  &__query {
+    img {
+      margin: 0 auto;
+      max-width: 85%;
+      padding-left: var(--nf-base-position-left);
+    }
+  }
+
+  &__output {
+    img {
+      width: 4gs;
+      max-width: 4gs !important;
+    }
+  }
+
+  &__completed {
+    background-size: 60% !important;
+    background-position-y: center;
+
+    & + svg {
+      left: 1gs;
+      bottom: -0.4gs;
+      width: 2.5gs;
+      height: 2.5gs;
+      stroke-width: 0.5;
+      @apply text-white;
+    }
+  }
+}

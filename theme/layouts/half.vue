@@ -7,7 +7,7 @@ const props = defineProps({
   position: String,
   image: String,
   icon: String,
-  sequence: Number
+  sequence: String
 })
 </script>
 
@@ -15,6 +15,10 @@ const props = defineProps({
 .half {
   background-position-x: 5gs;
   background-position-y: top;
+
+  &.flex-row-reverse {
+    background-position-x: 0;
+  }
 
   & > main {
     width: 5gs;

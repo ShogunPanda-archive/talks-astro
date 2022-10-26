@@ -1,10 +1,13 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e -x
+TALK=${1/.md/}
 
-mkdir -p {public,slides}/$1
+rm -rf slides/$TALK
+mkdir -p {public,slides}/$TALK
 
-cat <<EOF > $1.md
+# Add the header
+cat <<EOF > $TALK.md
 ---
 title:
 author:
@@ -26,6 +29,19 @@ theme: ./theme
 layout: hello
 ---
 
+EOF
+
+# Add the slides out of the list file
+j=2
+for i in $(cat $TALK.list); do
+  j=$((j+1))
+  SLIDE=$(printf "./slides/$TALK/%02s--%s.md" "$j" "$i")
+  echo -ne "---\nsrc: $SLIDE\n---\n\n" >> $TALK.md
+  touch $SLIDE
+done;
+
+# Add the footer
+cat <<EOF >> $TALK.md
 ---
 layout: quote
 sentence:

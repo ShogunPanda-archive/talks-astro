@@ -2,6 +2,7 @@
 const props = defineProps({
   index: String,
   icon: String,
+  image: String,
   title: String,
   description: String
 })
@@ -21,6 +22,15 @@ const props = defineProps({
     min-width: 0.6gs;
     min-height: 0.6gs;
     margin-top: 3px;
+  }
+
+  &__image {
+    display: inline;
+    stroke-width: 1;
+    height: 1gs;
+    min-height: 1gs;
+    margin-top: 3px;
+    margin-bottom: 1ch;
   }
 
   &__index {
@@ -48,7 +58,8 @@ const props = defineProps({
 <template>
   <section class="item">
     <h5 v-if="index" class="item__index">{{ index }}</h5>
-    <SvgIcon v-if="icon" :name="icon" class="item__icon" />
+    <img v-if="image" :src="image" class="item__image" />
+    <SvgIcon v-else-if="icon" :name="icon" class="item__icon" />
 
     <div class="item__text">
       <h4 v-if="title" class="item__title">{{ title }}</h4>

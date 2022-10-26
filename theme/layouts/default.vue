@@ -7,14 +7,13 @@ const props = defineProps({
   position: String,
   image: String,
   icon: String,
-  sequence: Number
+  sequence: String
 })
 </script>
 
 <style>
 .full {
   padding: var(--nf-base-position-left);
-  padding-right: calc(2 * var(--nf-base-position-left));
 
   .item {
     &:not(:first-of-type) {

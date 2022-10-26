@@ -11,7 +11,7 @@ import Logo from '../assets/nearform-logo-with-text-right.svg'
   }
 
   &__contents {
-    width: 90%;
+    max-width: 90%;
     margin-left: var(--nf-base-position-left);
 
     h1 {
@@ -63,7 +63,10 @@ import Logo from '../assets/nearform-logo-with-text-right.svg'
       <Logo class="cover__logo absolute z-1 fill-white" />
 
       <section class="cover__contents z-2 self-center">
-        <h1 class="font-bold">{{ $slidev.configs.title }}</h1>
+        <h1
+          class="font-bold"
+          v-html="($slidev.configs.title_formatted || $slidev.configs.title).replace(' %br% ', '<br />')"
+        />
         <h2 class="text-nf-brunch-pink font-light">
           <strong class="inline-block text-white">{{ $slidev.configs.author.name }}</strong>
           {{ $slidev.configs.author.description_title || $slidev.configs.author.description }}

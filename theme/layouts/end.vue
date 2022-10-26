@@ -18,6 +18,10 @@ import LogoWithText from '../assets/nearform-logo-with-text-right.svg'
     padding-left: var(--nf-base-position-left);
     font-size: 12pt;
 
+    a {
+      @apply text-nf-darkest-blue;
+    }
+
     &__contacts {
       column-gap: 3ch;
     }
