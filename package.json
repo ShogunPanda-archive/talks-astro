@@ -19,10 +19,12 @@
   "scripts": {
     "dev": "./scripts/dev.sh",
     "build": "./scripts/build.sh",
-    "create": "./scripts/create.sh",
     "serve": "./scripts/serve.sh",
+    "export": "./scripts/export.sh",
+    "create": "./scripts/create.sh",
     "format": "prettier -w talks theme",
-    "lint": "eslint talks thbuild"
+    "lint": "eslint talks scripts"
+
   },
   "dependencies": {
     "@slidev/cli": "^0.36.6",
@@ -35,6 +37,7 @@
     "@fastify/static": "^6.5.0",
     "@iconify-json/fa": "^1.1.2",
     "fastify": "^4.9.2",
+    "playwright-chromium": "^1.27.1",
     "prettier": "^2.7.1"
   },
   "engines": {
