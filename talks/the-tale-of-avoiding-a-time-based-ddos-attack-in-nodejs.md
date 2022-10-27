@@ -26,8 +26,6 @@ sideBackground: /the-tale-of-avoiding-a-time-based-ddos-attack-in-nodejs/online-
 logo: white
 ---
 
-<br/>
-
 #### _They must not go down!_
 
 ---

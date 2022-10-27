@@ -136,7 +136,7 @@ const props = defineProps({
 
       <hr class="inline-block h-0 border-dotted border-0 border-top-2 w-2gs my-1ch border-white" />
 
-      <h4>Represents modules used globally</h4>
+      <h4 class="m-0">Represents modules used globally</h4>
       <h1 class="text-nf-brunch-pink mb-0 no-border">{{ $slidev.configs.company.npm.percentage }}</h1>
     </div>
   </article>

@@ -74,7 +74,7 @@ const props = defineProps({
       <img :src="sideBackground" :class="`h-full max-w-none ${sideBackgroundClasses ?? ''}`" />
     </div>
     <div v-else-if="sideText" :class="`flex flex-1 items-center p-1bp h-full text-justify ${sideTextClasses ?? ''}`">
-      <h4 v-html="sideText" />
+      <h4 v-html="sideText" class="m-0" />
     </div>
 
     <h2 v-if="sequence" :class="`sequence ${sequenceClasses ?? ''}`">{{ sequence }}</h2>
