@@ -1,9 +1,6 @@
 html {
-  --nf-base-position-left: 0.45gs;
-  --nf-item-spacing: 0.4gs;
-
   @apply font-extralight;
-  font-size: 12pt;
+  @apply font-size-12pt;
 }
 
 /* This is used in presenter mode */
@@ -15,7 +12,7 @@ h1,
 h2,
 h3 {
   font-family: Poppins;
-  @apply font-semibold;
+  @apply font-bold;
 }
 
 p,
@@ -32,7 +29,7 @@ h4,
 h5,
 h6,
 p {
-  line-height: 1.3em;
+  @apply leading-snug;
 }
 
 strong,
@@ -46,30 +43,31 @@ code {
 
 em {
   @apply font-bold;
-  font-style: normal;
+  @apply not-italic;
   @apply text-nf-brunch-pink;
 }
 
 h1 {
-  margin-bottom: 0.4gs;
-  @apply font-bold;
-  font-size: 30pt;
+  @apply mb-0_4gs;
+  @apply font-size-30pt;
 
-  &::after {
-    content: '';
-    position: relative;
-    bottom: -0.1gs;
-    left: 0;
-    display: block;
-    width: 0.96gs;
-    height: 0.06gs;
-    @apply bg-nf-brunch-pink;
+  &:not(&.no-border) {
+    &::after {
+      content: '';
+      @apply relative;
+      @apply block;
+      @apply -bottom-0_1gs;
+      @apply left-0;
+      @apply w-1gs;
+      @apply h-0_05gs;
+      @apply bg-nf-brunch-pink;
+    }
   }
 }
 
 h4 {
-  font-size: 18pt;
-  line-height: 1.5em;
+  @apply font-size-18pt;
+  @apply leading-normal;
 }
 
 a,
@@ -78,131 +76,104 @@ a:active,
 a:visited,
 a:focus {
   @apply text-nf-neon-blue;
-  font-size: 12pt;
+  @apply font-size-12pt;
+}
+
+.nf-slide-container {
+  @apply relative;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply w-full;
+  @apply h-full;
+  @apply z-1;
+}
+
+.nf-slide {
+  @apply relative;
+  @apply flex;
+  @apply w-full;
+  @apply h-full;
+  @apply z-1; 
 }
 
 .logo {
-  position: absolute;
-  z-index: 100;
-  bottom: var(--nf-base-position-left);
-  right: var(--nf-base-position-left);
-  width: 0.35gs;
-  padding-bottom: 0.05gs;
+  @apply absolute;
+  @apply z-60;
+  @apply bottom-1bp;
+  @apply right-1bp;
+  @apply w-0_35gs;
+  @apply pb-0_05gs;
   border-bottom-width: 0.05gs;
   @apply border-nf-brunch-pink;
 
-  &.fill-white {
+  &--white {
+    @apply fill-white;
     @apply border-white;
   }
 }
 
-.sequence {
-  position: absolute;
-  bottom: -11%;
-  left: 2gs;
-  font-size: 220pt;
-  line-height: 1em;
+.big-title {
+  @apply font-size-45pt;
   @apply font-bold;
-  @apply text-neutral-300;
-  vertical-align: baseline;
+
+  &::after {
+    @apply w-2gs;
+    @apply h-0_1gs;
+  }
+
+  &--white {
+    @apply max-w-4gs;
+    @apply text-white;
+
+    &::after {
+      @apply !bg-white;
+    }
+  }
 }
 
 .callout {
-  display: inline;
-  border-bottom-width: 10px;
+  border-bottom-width: 0.1gs;
   @apply border-nf-brunch-pink;
   font-family: Poppins;
   @apply font-bold;
-  font-size: 50pt;
-  padding: 0.1gs 1ch;
+  @apply font-size-50pt;
+  @apply m-0;
+  @apply py-0_1gs;
+  @apply px-1ch;
   @apply bg-nf-midnight-blue;
   @apply text-white;
 
   &::after {
-    display: none;
+    display: none !important;
   }
 
   &--title {
-    position: absolute;
-    z-index: 2;
-    bottom: var(--nf-base-position-left);
-    left: var(--nf-base-position-left);
-    margin: 0;
+    @apply absolute;
+    @apply z-2;
+    @apply bottom-1bp;
+    @apply left-1bp;
   }
 }
 
 .callout-icon {
-  position: absolute;
-  bottom: -0.5gs;
-  left: 3.5gs;
-  width: 3gs;
-  height: 3gs;
+  @apply absolute;
+  @apply -bottom-0_5gs;
+  @apply left-3_5gs;
+  @apply w-3gs;
+  @apply h-3gs;
   @apply text-nf-neon-blue;
-  stroke-width: 1;
-}
+  @apply stroke-1;
+} 
 
-.avatar {
-  width: 1.5gs;
-}
-
-.big-title {
-  font-size: 45pt;
-
-  &::after {
-    width: 1.5gs;
-    height: 0.1gs;
-  }
-
-  &--white {
-    max-width: 8gs;
-    @apply text-white;
-
-    &::after {
-      @apply bg-white;
-    }
-  }
-}
-
-.nf-slide-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.nf-slide {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.columns  {
-  .item {
-    flex: 1;
-    flex-direction: column;
-    height: 100%;
-    padding: 1ch;
-    @apply bg-white;
-
-    &:not(:first-of-type) {
-      padding-top: 1ch;
-    }
-
-    &__icon {
-      margin-bottom: 2ch;
-      margin-right: 0;
-    }
-
-    &__title,
-    &__contents {
-      text-align: center;
-    }
-  }
-
-  &__border {
-    width: 1.5px;
-    height: 100%;
-  }
+.sequence {
+  @apply absolute
+  @apply -bottom-0_75gs;
+  @apply left-2gs;
+  @apply font-size-220pt;
+  @apply line-height-1;
+  @apply font-bold;
+  @apply text-neutral-300;
+  @apply align-baseline;
+  @apply z-0;
 }

@@ -1,58 +1,49 @@
 <script setup>
-import Logo from '../assets/nearform-logo.svg'
+import Logo from '../assets/nearform-logo.svg';
 
-const props = defineProps({ logo_black: Boolean })
+const props = defineProps({ 
+  classes: String, 
+  logo: String
+})
 </script>
 
 <style>
-.hello {
-  background-image: url(/theme/location.png);
-  background-position-x: 5gs;
-  background-position-y: top;
-  background-size: 5gs, contain;
+  .hello {
+    grid-template:
+                  "a b" min-content
+                  "c b" 1fr
+                  / 1fr 1fr;
 
-  main {
-    width: 5gs;
-    padding: var(--nf-base-position-left);
+    &__avatar {
+      @apply w-1_5gs;
+    }        
   }
-
-  .item {
-    width: 3.1gs;
-    margin: 0.1gs auto 0 auto;
-
-    &__contents {
-      text-align: left;
-    }
-  }
-}
 </style>
 
 <template>
-  <div class="nf-slide-container">
-    <article class="nf-slide hello bg-no-repeat">
-      <main class="flex flex-col h-full">
-        <h1>Hello, I'm {{ $slidev.configs.author.name.split(' ')[0] }}!</h1>
+  <article :class="`nf-slide hello grid ${classes ?? ''}`">
+    <h1 class="grid-a pt-1bp pl-1bp">Hello, I'm {{ $slidev.configs.author.name.split(' ')[0] }}!</h1>
+    
+    <div class="grid-b w-5gs h-full">
+      <img src="/theme/location.png" class="w-full overflow-hidden" />
+    </div>
 
-        <div class="flex flex-1 flex-col justify-center">
-          <img src="/theme/avatar-with-shadow.png" class="avatar my-0 mx-auto" />
+    <div class="grid-c flex flex-col self-center justify-self-center gap-y-1ch">
+      <img src="/theme/avatar-with-shadow.png" class="hello__avatar self-center" />
+      
+      <Item icon="users">
+        <strong v-html="$slidev.configs.author.description"/>
+      </Item>
+      
+      <Item icon="brand-twitter" :link="`https://twitter.com/${$slidev.configs.author.twitter}`">
+        <strong v-html="$slidev.configs.author.twitter"/>
+      </Item>
+      
+      <Item icon="brand-github" :link="`https://github.com/${$slidev.configs.author.github}`">
+        <strong v-html="$slidev.configs.author.github"/>
+      </Item>
+    </div>
 
-          <section class="mx-auto my-0">
-            <Item icon="users">
-              <strong>{{ $slidev.configs.author.description }}</strong>
-            </Item>
-
-            <Item icon="brand-twitter" :link="`https://twitter.com/${$slidev.configs.author.twitter}`">
-              <strong>{{ $slidev.configs.author.twitter }}</strong>
-            </Item>
-
-            <Item icon="brand-github" :link="`https://github.com/${$slidev.configs.author.github}`">
-              <strong>{{ $slidev.configs.author.github }}</strong>
-            </Item>
-          </section>
-        </div>
-      </main>
-    </article>
-
-    <Logo :class="`logo fill-${logo_black ? 'black' : 'white'}`" />
-  </div>
+    <Logo :class="`logo logo--${logo ?? 'white'}`" />
+  </article>
 </template>

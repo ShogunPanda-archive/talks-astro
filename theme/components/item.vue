@@ -1,69 +1,106 @@
 <script setup>
 const props = defineProps({
+  horizontal: Boolean,
   index: String,
   icon: String,
   image: String,
   title: String,
-  description: String
+  text: String,
+  indexClasses: String,
+  iconClasses: String,
+  imageClasses: String,
+  titleClasses: String,
+  textClasses: String
 })
+
 </script>
 
 <style>
 .item {
-  display: flex;
-  align-items: center;
-  column-gap: 2ch;
+  @apply flex;
+  @apply items-start;
 
   &__icon {
-    display: inline;
-    stroke-width: 1;
-    width: 0.6gs;
-    height: 0.6gs;
-    min-width: 0.6gs;
-    min-height: 0.6gs;
-    margin-top: 3px;
+    @apply inline;
+    @apply w-0_6gs;
+    @apply h-0_6gs;
+    @apply min-w-0_6gs;
+    @apply min-h-0_6gs;
+    @apply stroke-1;
+    @apply -mt-4px;
+    @apply mr-1ch;
   }
 
   &__image {
-    display: inline;
-    stroke-width: 1;
-    height: 1gs;
-    min-height: 1gs;
-    margin-top: 3px;
-    margin-bottom: 1ch;
+    @apply inline;
+    @apply w-1gs;
+    @apply h-1gs;
+    @apply min-w-1gs;
+    @apply min-w-1gs;
+    @apply mb-1ch;
   }
 
   &__index {
     font-family: Poppins;
     @apply font-bold;
     @apply text-right;
-    width: 0.3gs;
-    font-size: 35pt;
-    line-height: 1em;
-    margin-top: 6px;
+    @apply w-0_3gs;
+    @apply font-size-35pt;
+    @apply leading-none;
   }
 
   &__text {
-    display: flex;
-    flex-direction: column;
+    @apply max-w-7gs;
+    @apply flex;
+    @apply flex-col;
   }
 
   &__title {
-    font-weight: bold;
-    font-size: 14pt;
+    @apply max-w-7gs;
+    @apply font-bold;
+    @apply font-size-14pt;
+  }
+
+  &--horizontal {
+    @apply flex-1;
+    @apply flex-col;
+    @apply text-center;
+    @apply items-center;
+  }
+
+  &--horizontal &__icon {
+    @apply w-1gs;
+    @apply h-1gs;
+    @apply min-w-1gs;
+    @apply min-h-!gs;
+    @apply mt-0;
+    @apply mr-0;
+    @apply mb-1ch;    
+  }
+
+  &--horizontal &__title, &--horizontal &__text {
+    @apply max-w-3_5gs;
   }
 }
+
+.item__spacer {
+  @apply bg-neutral-300;
+  @apply w-1px;
+  @apply h-80p;
+}
+
 </style>
 
 <template>
-  <section class="item">
-    <h5 v-if="index" class="item__index">{{ index }}</h5>
-    <img v-if="image" :src="image" class="item__image" />
-    <SvgIcon v-else-if="icon" :name="icon" class="item__icon" />
+  <section :class="`item ${horizontal ? 'item--horizontal' : ''}`">
+    <h5 v-if="index" :class="`item__index ${indexClasses ?? ''}`">{{ index }}</h5>
+    <img v-if="image" :src="image" :class="`item__image ${imageClasses ?? ''}`" />
+    <SvgIcon v-else-if="icon" :name="icon" :class="`item__icon ${iconClasses ?? ''}`" />
 
-    <div class="item__text">
-      <h4 v-if="title" class="item__title">{{ title }}</h4>
-      <p class="item__contents"><slot /></p>
+    <div :class="`item__text ${textClasses ?? ''}`">
+      <h4 v-if="title" :class="`item__title ${titleClasses ?? ''}`" v-html="title"/>
+      <p v-if="text" :class="`item__contents ${textClasses ?? ''}`" v-html="text"/>
+      <p v-else :class="`item__contents ${textClasses ?? ''}`"><slot/></p>
     </div>
   </section>
 </template>

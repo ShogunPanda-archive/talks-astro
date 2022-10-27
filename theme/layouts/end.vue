@@ -1,66 +1,55 @@
 <script setup>
-import CurveBottomRight from '../assets/hiring-curve-bottom-right.svg'
-import Logo from '../assets/nearform-logo.svg'
-import LogoWithText from '../assets/nearform-logo-with-text-right.svg'
+import CurveBottomRight from '../assets/hiring-curve-bottom-right.svg';
+import LogoWithText from '../assets/nearform-logo-with-text-right.svg';
+
+const props = defineProps({
+  classes: Boolean
+})
 </script>
 
 <style>
-.end {
-  background-image: url('../assets/panda.jpg');
-  background-position: 0 -4.77gs;
+  .end {
+    background-image: url('../assets/panda.jpg');
+    background-position-y: -5gs;
 
-  .callout {
-    margin: var(--nf-base-position-left);
-  }
-
-  &__footer {
-    height: 0.72gs;
-    padding-left: var(--nf-base-position-left);
-    font-size: 12pt;
-
-    a {
-      @apply text-nf-darkest-blue;
+    footer {
+      .grid{
+        grid-template:
+                        "a b e" 1fr
+                        "c d e" 1fr
+                        / min-content 1fr min-content
+      }
     }
-
-    &__contacts {
-      column-gap: 3ch;
-    }
-
+    
     &__logo-with-text {
       width: 1.81gs;
-      margin-right: 0.3gs;
+    }
+
+    &__curve-bottom-right {
+      top: 3.02gs;
+      left: 5.82gs;
+      width: 4.25gs;
     }
   }
-
-  &__curve-bottom-right {
-    top: 3.02gs;
-    left: 5.82gs;
-    width: 4.25gs;
-  }
-}
 </style>
 
 <template>
-  <div class="nf-slide-container">
-    <article class="nf-slide end flex flex-col items-start justify-between bg-no-repeat bg-cover">
-      <CurveBottomRight class="end__curve-bottom-right absolute z-3 fill-white" />
+  <article :class="`end nf-slide flex flex-col bg-no-repeat bg-cover ${classes ?? ''}`">
 
-      <div class="flex-1"></div>
+    <div class="flex-1"></div>
 
-      <h1 class="callout">Thank you!</h1>
+    <h1 class="callout callout--title bottom-2bp">Thank you!</h1>
 
-      <footer class="end__footer flex self-end items-center w-full bg-nf-brunch-pink text-nf-darkest-blue">
-        <div class="end__footer__contacts grid grid-cols-[1fr,1fr]">
-          <strong>{{ $slidev.configs.author.name }}</strong>
-          <a href="https://twitter.com/{{ $slidev.configs.author.twitter }}">@{{ $slidev.configs.author.twitter }}</a>
-          <span>{{ $slidev.configs.author.description_title }}</span>
-          <a href="mailto:{{ $slidev.configs.author.email }}">{{ $slidev.configs.author.email }}</a>
-        </div>
+    <footer class="w-full h-0_7gs px-1bp bg-nf-brunch-pink flex items-center">
+      <div class="grid w-full text-nf-darkest-blue gap-x-2ch">
+        <strong class="grid-a whitespace-nowrap">{{ $slidev.configs.author.name }}</strong>
+        <a class="grid-b whitespace-nowrap !text-nf-darkest-blue" href="https://twitter.com/{{ $slidev.configs.author.twitter }}">@{{ $slidev.configs.author.twitter }}</a>
+        <span class="grid-c whitespace-nowrap">{{ $slidev.configs.author.description_title }}</span>
+        <a class="grid-d whitespace-nowrap text-nf-darkest-blue" href="mailto:{{ $slidev.configs.author.email }}">{{ $slidev.configs.author.email }}</a>
+        <LogoWithText class="end__logo-with-text grid-e self-center fill-nf-darkest-blue" />
+      </div>
+    </footer>
 
-        <div class="flex-1"></div>
-
-        <LogoWithText class="end__footer__logo-with-text justify-self-end fill-nf-darkest-blue" />
-      </footer>
-    </article>
-  </div>
+    <CurveBottomRight class="end__curve-bottom-right absolute z-3 fill-white" />
+  </article>
 </template>

@@ -1,132 +1,82 @@
 <script setup>
 import CurveBottomRight from '../assets/hiring-curve-bottom-right.svg'
-import Logo from '../assets/nearform-logo.svg'
 import LogoWithText from '../assets/nearform-logo-with-text-right.svg'
+import Logo from '../assets/nearform-logo.svg'
 
-import LinkedIn from '../assets/icons/brand-linkedin.svg'
 import Facebook from '../assets/icons/brand-facebook.svg'
-import Twitter from '../assets/icons/brand-twitter.svg'
 import GitHub from '../assets/icons/brand-github.svg'
+import LinkedIn from '../assets/icons/brand-linkedin.svg'
+import Twitter from '../assets/icons/brand-twitter.svg'
 import Youtube from '../assets/icons/brand-youtube.svg'
+
+const props = defineProps({
+  classes: String
+})
 </script>
 
 <style>
-.hiring {
-  &__logo {
-    height: 0.6gs;
-    margin-right: 2ch;
-  }
+  .hiring {
+    header {
+      p {
+        font-family: Poppins;
+        @apply font-size-10pt;
+        line-height: 1.15em;
+      }
+    }
 
-  header {
-    margin: var(--nf-base-position-left) 0 0 var(--nf-base-position-left);
+    &__world {
+      h2 {
+        @apply font-size-16pt;
+      }
+    }
 
-    p {
+    h1.no-border {
+      @apply font-size-30pt;
+      @apply font-extrabold;
+    }
+
+    footer {
       font-family: Poppins;
-      font-size: 10pt;
-      line-height: 1.15em;
-    }
-  }
-
-  &__world {
-    margin-left: var(--nf-base-position-left);
-    height: 3.09gs;
-    background-image: url('/theme/world.png');
-
-    & > h2 {
-      font-size: 16pt;
-    }
-  }
-
-  &__highlight {
-    margin: 0 0 0.2gs var(--nf-base-position-left);
-    font-size: 30pt;
-
-    &::after {
-      display: none;
-    }
-  }
-
-  &__npm {
-    top: var(--nf-base-position-left);
-    right: var(--nf-base-position-left);
-    width: 2.5gs;
-
-    h1 {
-      @apply text-nf-brunch-pink;
-      margin-bottom: 0;
-      font-family: Lexend;
-      font-size: 40pt;
-
-      &::after {
-        display: none;
-      }
-    }
-
-    h2 {
-      margin-bottom: 1.5ch;
-      font-size: 13pt;
-    }
-
-    h3 {
-      font-size: 12pt;
-    }
-
-    h4 {
-      font-size: 10pt;
-    }
-
-    hr {
-      width: 1.5gs;
-      margin: 1.2ch 0;
-      border-top-width: 2px;
-    }
-  }
-
-  &__footer {
-    height: 0.72gs;
-    padding-left: var(--nf-base-position-left);
-    font-family: Poppins;
-    @apply font-bold;
-    font-size: 12pt;
-
-    hr {
-      height: 0.26gs;
-      margin: 0 1ch;
-    }
-
-    span {
-      margin-right: 1ch;
-    }
-
-    &__social {
-      margin-right: 1ch;
-
-      svg {
-        width: 0.25gs;
-      }
+      @apply font-bold;
+      @apply font-size-12pt;
     }
 
     &__logo-with-text {
-      width: 1.81gs;
-      margin-right: var(--nf-base-position-left);
+      @apply w-1_8gs;
+    }
+
+    &__curve-bottom-right {
+      top: 3.02gs;
+      left: 5.82gs;
+      width: 4.25gs;
+    }
+
+    &__npm {
+      h1 {
+        font-family: Lexend;
+        @apply font-size-40pt;
+      }
+
+      h2 {
+        @apply font-size-13pt;
+      }
+
+      h3 {
+        @apply font-size-12pt;
+      }
+
+      h4 {
+        @apply font-size-10pt;
+      }
     }
   }
-
-  &__curve-bottom-right {
-    top: 3.02gs;
-    left: 5.82gs;
-    width: 4.25gs;
-  }
-}
 </style>
 
 <template>
-  <div class="nf-slide-container">
-    <article class="nf-slide hiring flex flex-col justify-between bg-nf-darkest-blue text-white">
-      <CurveBottomRight class="hiring__curve-bottom-right absolute z-3 fill-white" />
-
-      <header class="flex items-center">
-        <Logo class="hiring__logo justify-self-end fill-white" />
+  <article :class="`hiring nf-slide flex flex-col justify-between bg-nf-darkest-blue text-white ${classes ?? ''}`">
+    <div class="flex flex-col flex-1 place-content-between">
+      <header class="flex pt-1bp pl-1bp items-center">
+        <Logo class="h-0_6gs mr-2ch justify-self-end fill-white" />
 
         <p>
           WE’RE BOLD<br />
@@ -136,53 +86,55 @@ import Youtube from '../assets/icons/brand-youtube.svg'
         </p>
       </header>
 
-      <div class="hiring__world flex items-center bg-no-repeat bg-contain">
+      <div class="hiring__world flex items-center ml-1bp bg-no-repeat bg-contain h-3gs" style="background-image: url('/theme/world.png')">
         <h2>Global Delivery Org with {{ $slidev.configs.company.count }}+ and counting</h2>
       </div>
 
-      <div class="hiring__npm absolute text-center">
-        <h2>Major Contributors to the Open Source Web Platform</h2>
+      <h1 class="m-0 ml-1bp mb-1ch text-nf-brunch-pink no-border">We are hiring!</h1>
+    </div>
 
-        <h3>NPM monthly downloads</h3>
-        <h1>{{ $slidev.configs.company.npm.monthly }}</h1>
+    <footer class="flex items-center w-full h-0_7gs px-1bp bg-nf-brunch-pink text-nf-darkest-blue">
+      <a href="https://nearform.com" class="text-nf-darkest-blue">nearform.com</a>
+      <div class="w-2px h-0_3gs mx-1ch bg-nf-darkest-blue" />
+      <span>follow us on</span>
 
-        <hr class="inline-block h-0 border-dotted border-0 border-white" />
+      <a href="https://www.linkedin.com/company/nearform/" class="w-0_3gs ml-1ch">
+        <LinkedIn class="text-nf-darkest-blue" />
+      </a>
 
-        <h4>Represents modules used globally</h4>
-        <h1>{{ $slidev.configs.company.npm.percentage }}</h1>
-      </div>
+      <a href="https://twitter.com/nearform" class="w-0_3gs ml-1ch">
+        <Twitter class="text-nf-darkest-blue" />
+      </a>
 
-      <h1 class="hiring__highlight text-nf-brunch-pink">We are hiring!</h1>
+      <a href="https://github.com/nearform" class="w-0_3gs ml-1ch">
+        <GitHub class="text-nf-darkest-blue" />
+      </a>
 
-      <footer class="hiring__footer flex self-end items-center w-full bg-nf-brunch-pink text-nf-darkest-blue">
-        <a href="https://nearform.com" class="text-nf-darkest-blue">nearform.com</a>
-        <hr class="w-0 border-0 border-left-2 border-nf-darkest-blue" />
-        <span class="block">follow us on</span>
+      <a href="https://www.youtube.com/channel/UCp2Tsbjd3P8itnBHUNHi82A" class="w-0_3gs ml-1ch">
+        <Youtube class="text-nf-darkest-blue" />
+      </a>
 
-        <a href="https://www.linkedin.com/company/nearform/" class="hiring__footer__social">
-          <LinkedIn class="text-nf-darkest-blue" />
-        </a>
+      <a href="https://www.facebook.com/NearFormLtd" class="w-0_3gs ml-1ch">
+        <Facebook class="text-nf-darkest-blue" />
+      </a>
 
-        <a href="https://twitter.com/nearform" class="hiring__footer__social">
-          <Twitter class="text-nf-darkest-blue" />
-        </a>
+      <div class="flex flex-1"></div>
 
-        <a href="https://github.com/nearform" class="hiring__footer__social">
-          <GitHub class="text-nf-darkest-blue" />
-        </a>
+      <LogoWithText class="hiring__logo-with-text justify-end fill-nf-darkest-blue" />
+    </footer>
 
-        <a href="https://www.youtube.com/channel/UCp2Tsbjd3P8itnBHUNHi82A" class="hiring__footer__social">
-          <Youtube class="text-nf-darkest-blue" />
-        </a>
+    <CurveBottomRight class="hiring__curve-bottom-right absolute z-3 fill-white" />
 
-        <a href="https://www.facebook.com/NearFormLtd" class="hiring__footer__social">
-          <Facebook class="text-nf-darkest-blue" />
-        </a>
+    <div class="hiring__npm w-2_5gs absolute text-center top-1bp right-1bp">
+      <h2 class="mb-2ch">Major Contributors to the Open Source Web Platform</h2>
 
-        <div class="flex-1"></div>
+      <h3>NPM monthly downloads</h3>
+      <h1 class="text-nf-brunch-pink mb-0 no-border">{{ $slidev.configs.company.npm.monthly }}</h1>
 
-        <LogoWithText class="hiring__footer__logo-with-text justify-end fill-nf-darkest-blue" />
-      </footer>
-    </article>
-  </div>
+      <hr class="inline-block h-0 border-dotted border-0 border-top-2 w-2gs my-1ch border-white" />
+
+      <h4>Represents modules used globally</h4>
+      <h1 class="text-nf-brunch-pink mb-0 no-border">{{ $slidev.configs.company.npm.percentage }}</h1>
+    </div>
+  </article>
 </template>
