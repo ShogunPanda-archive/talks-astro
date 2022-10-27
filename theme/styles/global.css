@@ -68,6 +68,7 @@ h1 {
 h4 {
   @apply font-size-18pt;
   @apply leading-normal;
+  @apply mb-0_4gs;
 }
 
 a,
@@ -94,7 +95,7 @@ a:focus {
   @apply flex;
   @apply w-full;
   @apply h-full;
-  @apply z-1; 
+  @apply z-1;
 }
 
 .logo {
@@ -164,7 +165,7 @@ a:focus {
   @apply h-3gs;
   @apply text-nf-neon-blue;
   @apply stroke-1;
-} 
+}
 
 .sequence {
   @apply absolute

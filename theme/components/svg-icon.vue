@@ -1,5 +1,5 @@
 <script setup>
-import { defineAsyncComponent, useAttrs } from 'vue';
+import { defineAsyncComponent, useAttrs } from 'vue'
 
 const attrs = useAttrs()
 

@@ -1,7 +1,7 @@
 <script setup>
-import CurveBottomRight from '../assets/cover-curve-bottom-right.svg';
-import CurveTopLeft from '../assets/cover-curve-top-left.svg';
-import Logo from '../assets/nearform-logo-with-text-right.svg';
+import CurveBottomRight from '../assets/cover-curve-bottom-right.svg'
+import CurveTopLeft from '../assets/cover-curve-top-left.svg'
+import Logo from '../assets/nearform-logo-with-text-right.svg'
 
 const props = defineProps({
   classes: Boolean
@@ -9,44 +9,44 @@ const props = defineProps({
 </script>
 
 <style>
-  .cover {
-    &__curve-top-left {
-      width: 2.76gs;
-    }
+.cover {
+  &__curve-top-left {
+    width: 2.76gs;
+  }
 
-    &__curve-bottom-right {
-      width: 5.51gs;
-    }
-    
-    &__contents {
-      grid-template:
-                    "a a" min-content
-                    "b b" min-content
-                    "c c" min-content
-                    "d e" min-content 
-                    / 1fr 1fr;
+  &__curve-bottom-right {
+    width: 5.51gs;
+  }
 
-      h1 {
-        @apply font-size-37pt;
+  &__contents {
+    grid-template:
+      'a a' min-content
+      'b b' min-content
+      'c c' min-content
+      'd e' min-content
+      / 1fr 1fr;
 
-        &::after {
-          display: none;
-        }
-      }
+    h1 {
+      @apply font-size-35pt;
 
-      h2 {
-        @apply font-size-14pt;
+      &::after {
+        display: none;
       }
     }
 
-    &__copyright {
-      @apply font-size-10.5pt;
-    }
-
-    &__logo {
-      width: 2.65gs;
+    h2 {
+      @apply font-size-14pt;
     }
   }
+
+  &__copyright {
+    @apply font-size-10.5pt;
+  }
+
+  &__logo {
+    width: 2.65gs;
+  }
+}
 </style>
 
 <template>
@@ -64,7 +64,7 @@ const props = defineProps({
         <strong class="inline-block text-white mr-1ch">{{ $slidev.configs.author.name }}</strong>
         {{ $slidev.configs.author.description_title || $slidev.configs.author.description }}
       </h2>
-      
+
       <div class="grid-c w-1_5gs h-0_1gs bg-nf-brunch-pink mb-1gs" />
 
       <h3 class="cover__copyright self-end text-nf-brunch-pink font-light">

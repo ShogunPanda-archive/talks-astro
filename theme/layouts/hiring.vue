@@ -15,61 +15,61 @@ const props = defineProps({
 </script>
 
 <style>
-  .hiring {
-    header {
-      p {
-        font-family: Poppins;
-        @apply font-size-10pt;
-        line-height: 1.15em;
-      }
-    }
-
-    &__world {
-      h2 {
-        @apply font-size-16pt;
-      }
-    }
-
-    h1.no-border {
-      @apply font-size-30pt;
-      @apply font-extrabold;
-    }
-
-    footer {
+.hiring {
+  header {
+    p {
       font-family: Poppins;
-      @apply font-bold;
+      @apply font-size-10pt;
+      line-height: 1.15em;
+    }
+  }
+
+  &__world {
+    h2 {
+      @apply font-size-16pt;
+    }
+  }
+
+  h1.no-border {
+    @apply font-size-30pt;
+    @apply font-extrabold;
+  }
+
+  footer {
+    font-family: Poppins;
+    @apply font-bold;
+    @apply font-size-12pt;
+  }
+
+  &__logo-with-text {
+    @apply w-1_8gs;
+  }
+
+  &__curve-bottom-right {
+    top: 3.02gs;
+    left: 5.82gs;
+    width: 4.25gs;
+  }
+
+  &__npm {
+    h1 {
+      font-family: Lexend;
+      @apply font-size-40pt;
+    }
+
+    h2 {
+      @apply font-size-13pt;
+    }
+
+    h3 {
       @apply font-size-12pt;
     }
 
-    &__logo-with-text {
-      @apply w-1_8gs;
-    }
-
-    &__curve-bottom-right {
-      top: 3.02gs;
-      left: 5.82gs;
-      width: 4.25gs;
-    }
-
-    &__npm {
-      h1 {
-        font-family: Lexend;
-        @apply font-size-40pt;
-      }
-
-      h2 {
-        @apply font-size-13pt;
-      }
-
-      h3 {
-        @apply font-size-12pt;
-      }
-
-      h4 {
-        @apply font-size-10pt;
-      }
+    h4 {
+      @apply font-size-10pt;
     }
   }
+}
 </style>
 
 <template>
@@ -86,7 +86,10 @@ const props = defineProps({
         </p>
       </header>
 
-      <div class="hiring__world flex items-center ml-1bp bg-no-repeat bg-contain h-3gs" style="background-image: url('/theme/world.png')">
+      <div
+        class="hiring__world flex items-center ml-1bp bg-no-repeat bg-contain h-3gs"
+        style="background-image: url('/theme/world.png')"
+      >
         <h2>Global Delivery Org with {{ $slidev.configs.company.count }}+ and counting</h2>
       </div>
 

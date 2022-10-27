@@ -1,5 +1,5 @@
 <script setup>
-import Logo from '../assets/nearform-logo.svg';
+import Logo from '../assets/nearform-logo.svg'
 
 const props = defineProps({
   main: String,
@@ -19,38 +19,51 @@ const props = defineProps({
   sequence: String,
   sequenceClasses: String,
   classes: String,
-  logo: String,
+  logo: String
 })
 </script>
 
 <template>
   <div class="nf-slide-container">
-    <article v-if="!items" :class="`nf-slide min-w-5gs p-1bp flex-col ${sideText ? 'flex-2' : 'flex-1'} ${classes ?? ''}`">
-      <h1 v-html="main"/>
+    <article
+      v-if="!items"
+      :class="`nf-slide min-w-5gs p-1bp flex-col ${sideText ? 'flex-2' : 'flex-1'} ${classes ?? ''}`"
+    >
+      <h1 v-html="main" />
 
-      <h4 v-if="secondary" class="text-justify" v-html="secondary"/>
-      <slot/>
+      <h4 v-if="secondary" class="text-justify" v-html="secondary" />
+      <div class="text-justify"><slot /></div>
 
       <div v-if="image" class="flex flex-1 items-center justify-center">
-        <img v-if="image" :src="image" :class="`max-w-8gs max-h-3_5gs mx-auto ${secondary ? 'mt-2ch' : ''} ${imageClasses ?? ''}`" />    
+        <img
+          v-if="image"
+          :src="image"
+          :class="`max-w-8gs ${secondary ? 'max-h-2_5gs' : 'max-h-3_5gs'} mx-auto ${imageClasses ?? ''}`"
+        />
       </div>
     </article>
 
-    <article v-if="items" :class="`nf-slide min-w-5gs p-1bp flex-col ${sideText ? 'flex-2' : 'flex-1'} ${classes ?? ''}`">
-      <h1 v-html="main"/>
+    <article
+      v-if="items"
+      :class="`nf-slide min-w-5gs p-1bp flex-col ${sideText ? 'flex-2' : 'flex-1'} ${classes ?? ''}`"
+    >
+      <h1 v-html="main" />
 
-      <h4 v-if="secondary" class="text-justify" v-html="secondary"/>
-      <slot/>
-      
+      <h4 v-if="secondary" class="text-justify" v-html="secondary" />
+      <div class="text-justify"><slot /></div>
+
       <div :class="`flex ${horizontalItems ? 'flex-1 items-center gap-x-0_3gs' : 'flex-col gap-y-0_3gs'}`">
         <template v-for="(item, index) in items">
           <div v-if="horizontalItems && index > 0" class="item__spacer"></div>
 
           <Item
             :horizontal="horizontalItems"
-            :icon="item.icon" :title="item.title" 
-            iconClasses="text-nf-neon-blue" 
+            :index="item.index"
+            :icon="item.icon"
+            :title="item.title"
             :text="item.text"
+            indexClasses="text-nf-neon-blue"
+            iconClasses="text-nf-neon-blue"
           />
         </template>
       </div>
