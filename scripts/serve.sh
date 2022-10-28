@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TALKS=$(ls -1 dist)
+TALKS=$(ls -1 dist | grep -v pdf)
 FZF_TALKS_LIST=($TALKS)
 FZF_COLORS=prompt:3:bold,bg+:-1,fg+:2:bold,pointer:2:bold,hl:-1:underline,hl+:2:bold:underline
 FZF_HEIGHT=$(((${#FZF_TALKS_LIST[@]})+1))

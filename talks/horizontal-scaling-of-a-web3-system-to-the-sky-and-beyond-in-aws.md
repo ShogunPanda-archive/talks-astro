@@ -304,7 +304,32 @@ items:
 
 ---
 layout: separator
-main: How does it perform?
+main: Peer subsystem
+classes: bg-nf-orange-split
+---
+
+---
+main: Overview
+image: /horizontal-scaling-of-a-web3-system-to-the-sky-and-beyond-in-aws/eipfs-architecture-peer.png
+---
+
+---
+main: Peer subsystem characteristic
+items:
+  - icon: affiliate
+    title: Fully automatic
+    text: The subsystem is an autoscaling EKS cluster managed by an Elastic Load Balancer.
+  - icon: cloud
+    title: Stateless and lean
+    text: Each node searches for blocks on DynamoDB and forwards them using HTTP Byte-Range S3 fetches.
+  - icon: scissors
+    title: Simplified BitSwap
+    text: No external data is fetched, allowing to access to storage in read-only mode and to remove wantlists and ledgers management.
+---
+
+---
+layout: separator
+main: How does E-IPFS perform?
 classes: bg-nf-orange-split
 ---
 
@@ -330,7 +355,6 @@ items:
   - index: 24B
     title: Blocks to Cars
 horizontalItems: true
-
 ---
 
 ---
