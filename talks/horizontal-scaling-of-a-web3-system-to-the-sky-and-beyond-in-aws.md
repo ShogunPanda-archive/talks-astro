@@ -321,7 +321,7 @@ items:
     text: The subsystem is an autoscaling EKS cluster managed by an Elastic Load Balancer.
   - icon: cloud
     title: Stateless and lean
-    text: Each node searches for blocks on DynamoDB and forwards them using HTTP Byte-Range S3 fetches.
+    text: Each node searches for blocks on DynamoDB and directly forwards them using plain HTTP Byte-Range S3 fetches.
   - icon: scissors
     title: Simplified BitSwap
     text: No external data is fetched, allowing to access to storage in read-only mode and to remove wantlists and ledgers management.
