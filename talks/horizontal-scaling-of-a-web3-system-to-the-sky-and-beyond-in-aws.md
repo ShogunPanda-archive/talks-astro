@@ -211,7 +211,7 @@ horizontalItems: true
 ---
 
 ---
-main: How does HTTP ingestion works?
+main: How does HTTP ingestion work?
 secondary: The HTTP Ingest API make the Indexer Nodes choose when to sync.
 items:
   - icon: cloud-upload
@@ -329,7 +329,7 @@ items:
 
 ---
 layout: separator
-main: How does E-IPFS perform?
+main: How does<br/> E-IPFS perform?
 classes: bg-nf-orange-split
 ---
 
@@ -365,8 +365,8 @@ items:
     title: K.I.S.S.
     text: IPFS protocols are very complex. Simplifying is the only way to have viable products.
   - icon: world-www
-    title: HTTP is always home
-    text: New protocols are very fashionly, but sometimes going back to good old HTTP can be very performant.
+    title: HTTP is not dead yet
+    text: New protocols are very fashionable, but sometimes going back to good old HTTP can be very performant.
   - icon: affiliate
     title: Democracy is good
     text: Being unable to lock in a single cloud provider led to flexible and lean architecture.
