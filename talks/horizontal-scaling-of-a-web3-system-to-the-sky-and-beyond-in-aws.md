@@ -16,6 +16,14 @@ theme: ./theme
 ---
 
 ---
+layout: separator
+main: All you need to succeed<br/> is love!
+classes: bg-nf-orange-split
+sideBackground: /horizontal-scaling-of-a-web3-system-to-the-sky-and-beyond-in-aws/love.jpg
+sideBackgroundClasses: -ml-1_5gs
+---
+
+---
 layout: hello
 ---
 
@@ -32,8 +40,24 @@ image: /horizontal-scaling-of-a-web3-system-to-the-sky-and-beyond-in-aws/web3-st
 ---
 
 ---
+main: Content Identifier
+secondary: A CID uniquely identify a chunk of data in IPFS.
+sideImage: /horizontal-scaling-of-a-web3-system-to-the-sky-and-beyond-in-aws/cid.png
+---
+
+#### It provides informations on how to verify the integrity of the data but it does not contain any information about the location.
+
+---
+main: Content Archives
+secondary: The CAR file format is a concatenation of blocks using byte length prefixes.
+image: /horizontal-scaling-of-a-web3-system-to-the-sky-and-beyond-in-aws/car.png
+---
+
+#### The format is optimized for sequential reading.
+
+---
 layout: image
-main: What is going wrong?
+main: What was going wrong?
 image: /horizontal-scaling-of-a-web3-system-to-the-sky-and-beyond-in-aws/obstacle.jpg
 imageClasses: -top-2gs
 ---
